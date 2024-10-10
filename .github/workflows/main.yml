@@ -5,9 +5,6 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
-    container:
-      image: cypress/browsers:node-20.14.0-chrome-126.0.6478.114-1-ff-127.0.1-edge-126.0.2592.61-1
-      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,4 +15,3 @@ jobs:
         with:
           build: npm i
           start: npx cypress run --component
-          browser: chrome
